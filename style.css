@@ -1,0 +1,170 @@
+/* -----------------------------
+   Base Styling
+------------------------------ */
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    background-image: url("images/pokemon-background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+header {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    border-bottom: 3px solid #ccc;
+}
+
+h1 {
+    font-size: 4rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+#controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+#status {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* -----------------------------
+   Game Grid
+------------------------------ */
+
+main {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+#game_grid {
+    display: grid;
+    gap: 16px;
+    margin: 2rem auto;
+    width: fit-content;
+    justify-content: center;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.grid-easy {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.grid-medium {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.grid-hard {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+/* -----------------------------
+   Card Styling
+------------------------------ */
+
+.card {
+    width: 120px;
+    height: 160px;
+    perspective: 1000px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.front_face {
+    transform: rotateY(180deg);
+}
+
+.flip {
+    transform: rotateY(180deg);
+}
+
+/* -----------------------------
+   Button Styling
+------------------------------ */
+
+button,
+select {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    background-color: #0078d4;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover,
+select:hover {
+    background-color: #005fa3;
+}
+
+select {
+    background-color: #e0e0e0;
+    color: #000;
+    font-weight: normal;
+}
+
+/* -----------------------------
+   Light / Dark Theme
+------------------------------ */
+
+body.light {
+    background-color: #ffffff;
+    color: #ffffff;
+}
+
+body.dark {
+    background-color: #181818;
+    color: #eee;
+}
+
+body.dark header {
+    border-color: #444;
+}
+
+body.dark #game_grid {
+    background-color: #252525;
+}
+
+body.dark button {
+    background-color: #444;
+    color: #fff;
+}
+
+body.dark button:hover {
+    background-color: #666;
+}
